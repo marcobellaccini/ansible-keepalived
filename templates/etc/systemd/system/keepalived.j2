@@ -8,7 +8,7 @@ Wants=network-online.target
 [Service]
 Type=simple
 ExecStart=/usr/local/sbin/keepalived \
-  --dont-fork{% for option in keepalived_options %} --{{ option.name }}{% if option.value is defined %}={{ option.value }}{% endif %}{% endfor %} \
+  --dont-fork
 
 ExecReload=/bin/kill -HUP $MAINPID
 KillMode=process
